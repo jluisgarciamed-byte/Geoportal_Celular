@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== VARIABLES CSS ===== */
         :root {
@@ -68,10 +69,44 @@
         }
 
         .logo h1 {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--light);
-        }
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem; /* puedes dejar 1.5rem si te gusta más compacto */
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* quítalo si no quieres mayúsculas */
+    color: var(--light);
+}
+/* Logos del encabezado */
+.logo img { display:block; height:40px; }
+
+.logo-ods{
+  height:40px;           /* iguala alturas */
+  border-radius:8px;     /* bordes suaves para el cuadro ODS */
+  box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;
+}
+
+.logo-implan{
+  height:42px;           /* el IMPLAN suele verse mejor un pelín más alto */
+  border-radius:6px;
+}
+
+/* separaciones finas */
+.logo { gap: .85rem; }
+.logo h1 { margin: 0 .25rem; line-height:1; }
+
+/* Ajustes en móvil */
+@media (max-width: 768px){
+  .logo img{ height:32px; }
+  .logo-implan{ height:34px; }
+  .logo h1{ font-size:1.25rem; letter-spacing:.4px; }
+}
+
+/* Si el ODS se ve muy “pesado”, ponlo circular (opcional) */
+.logo-ods.round{
+  border-radius:50%;
+  padding:2px;                   /* pequeño margen interior */
+  background:rgba(255,255,255,.06);
+}
 
         /* Barra de búsqueda */
         .search-container {
@@ -1095,6 +1130,8 @@
     <header class="header">
         <div class="header-content">
             <div class="logo">
+      <!-- Logo ODS 17 -->
+    <img src="ODS17.png" alt="ODS 17 - Alianzas para lograr los objetivos" class="logo-ods">
                 <img src="LOGOTIPOGRISIMPLAN.png" alt="Logo IMPLAN" style="height: 40px; border-radius: 8px;">
                 <h1>Geoportal Participativo</h1>
             </div>

@@ -76,13 +76,59 @@
     text-transform: uppercase; /* quítalo si no quieres mayúsculas */
     color: var(--light);
 }
-/* Logos del encabezado */
-.logo img { display:block; height:40px; }
+/* ===== Logos del encabezado (ajustado) ===== */
+.logo img {
+  display: block;
+  height: 40px;
+}
 
-.logo-ods{
-  height:40px;           /* iguala alturas */
-  border-radius:8px;     /* bordes suaves para el cuadro ODS */
-  box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;
+/* Logo ODS 17 — versión circular sin bordes visibles */
+.logo-ods {
+  height: 48px;                /* un poco más grande */
+  border-radius: 50%;          /* hace el círculo */
+  object-fit: cover;           /* asegura que no se deforme */
+  background: none;
+  box-shadow: none;
+  padding: 2px;                /* pequeño margen interno */
+  transition: transform 0.3s ease;
+}
+
+.logo-ods:hover {
+  transform: scale(1.07);
+}
+
+/* Logo IMPLAN */
+.logo-implan {
+  height: 42px;
+  border-radius: 6px;
+}
+
+/* Separaciones y alineación */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo h1 {
+  margin: 0 0.25rem;
+  line-height: 1;
+  font-size: 1.9rem; /* <== más grande el texto */
+  letter-spacing: 0.8px;
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .logo-ods {
+    height: 40px;
+  }
+  .logo-implan {
+    height: 36px;
+  }
+  .logo h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .logo-implan{

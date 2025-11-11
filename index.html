@@ -76,82 +76,84 @@
     text-transform: uppercase; /* quítalo si no quieres mayúsculas */
     color: var(--light);
 }
-/* ===== Logos del encabezado (ajustado) ===== */
-.logo img {
-  display: block;
-  height: 40px;
+/* ===== Ajuste de logos y alineación del encabezado ===== */
+
+/* Contenedor del encabezado */
+.header-content {
+  display: flex;
+  justify-content: flex-start;   /* Alinea a la izquierda */
+  align-items: center;
+  gap: 2rem;                     /* Espacio entre logo y buscador */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1rem;            /* empuje hacia la izquierda */
 }
 
-/* Logo ODS 17 — versión circular sin bordes visibles */
+/* Contenedor de los logos */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;                     /* más espacio entre los logos */
+}
+
+/* Logo ODS 17 — más grande y circular */
 .logo-ods {
-  height: 48px;                /* un poco más grande */
-  border-radius: 50%;          /* hace el círculo */
-  object-fit: cover;           /* asegura que no se deforme */
+  height: 60px;                  /* más grande */
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
   background: none;
   box-shadow: none;
-  padding: 2px;                /* pequeño margen interno */
   transition: transform 0.3s ease;
 }
 
 .logo-ods:hover {
-  transform: scale(1.07);
+  transform: scale(1.08);
 }
 
 /* Logo IMPLAN */
 .logo-implan {
-  height: 42px;
+  height: 48px;
   border-radius: 6px;
 }
 
-/* Separaciones y alineación */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
+/* Texto principal */
 .logo h1 {
   margin: 0 0.25rem;
   line-height: 1;
-  font-size: 1.9rem; /* <== más grande el texto */
-  letter-spacing: 0.8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* un poco más grande */
+  letter-spacing: 1px;
+  color: var(--light);
 }
 
-/* Ajustes en pantallas pequeñas */
-@media (max-width: 768px) {
+/* ===== Ajustes responsivos ===== */
+@media (max-width: 1024px) {
   .logo-ods {
-    height: 40px;
+    height: 50px;
+    width: 50px;
   }
   .logo-implan {
-    height: 36px;
+    height: 42px;
   }
   .logo h1 {
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;
+    font-size: 1.6rem;
   }
 }
 
-.logo-implan{
-  height:42px;           /* el IMPLAN suele verse mejor un pelín más alto */
-  border-radius:6px;
-}
-
-/* separaciones finas */
-.logo { gap: .85rem; }
-.logo h1 { margin: 0 .25rem; line-height:1; }
-
-/* Ajustes en móvil */
-@media (max-width: 768px){
-  .logo img{ height:32px; }
-  .logo-implan{ height:34px; }
-  .logo h1{ font-size:1.25rem; letter-spacing:.4px; }
-}
-
-/* Si el ODS se ve muy “pesado”, ponlo circular (opcional) */
-.logo-ods.round{
-  border-radius:50%;
-  padding:2px;                   /* pequeño margen interior */
-  background:rgba(255,255,255,.06);
+@media (max-width: 768px) {
+  .header-content {
+    justify-content: space-between; /* en móvil, que el buscador se mantenga separado */
+    padding-left: 0.5rem;
+  }
+  .logo-ods {
+    height: 40px;
+    width: 40px;
+  }
+  .logo h1 {
+    font-size: 1.3rem;
+  }
 }
 
         /* Barra de búsqueda */
